@@ -31,9 +31,11 @@ if (isset($users[$username]) && password_verify($password, $users[$username]['pa
     header('Location: ' . BASE_URL . '/home');
     exit;
 } else {
-    $_SESSION['login_error'] = 'Credenciales incorrectas.';
-    header('Location: ' . BASE_URL . '/login');
-    exit;
+    // $_SESSION['login_error'] = 'Credenciales incorrectas.';
+    // header('Location: ' . BASE_URL . '/login');
+    // exit;
 }
 
 ?>
+
+si estás aquí es que algo ha salido mal
