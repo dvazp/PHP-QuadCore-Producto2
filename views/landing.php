@@ -15,19 +15,28 @@ session_start();
 
         <?php include 'views/common/navbar.php'; ?>
 
-        <div class="container mt-5">
-            <div class="p-5 mb-4 bg-light rounded-3">
-                <div class="container-fluid py-5">
+        <div class="container mt-5" 
+            style="transition: transform 0.3s ease; object-position: center;"
+            onmouseover="this.style.transform='scale(1.01)';"
+            onmouseout="this.style.transform='scale(1)';">
+            <div class="p-5 mb-4 bg-light rounded-3" style="height: 80vh; overflow: hidden;">
+                <div class="container-fluid pb-5">
                     <h1 class="display-5 fw-bold">App de fontanería</h1>
                     <p class="col-md-8 fs-4">
                         Bienvenido a nuestra aplicación de gestión de averías de fontanería. Aquí podrás reportar tus problemas, seguir el estado de tus solicitudes y comunicarte con nuestros técnicos.
                     </p>
-                    <button class="btn btn-primary btn-lg" type="button">Iniciar sesión</button>
+                    <button class="btn btn-primary btn-lg" type="button" href="login">Iniciar sesión</button>
                 </div>
-                <img src="https://escuelaartesania.com/wp-content/uploads/AOF094.jpg" class="img-fluid rounded" alt="Imagen de fontanería">
+                <img src="https://escuelaartesania.com/wp-content/uploads/AOF094.jpg" 
+                    alt="Imagen de fontanería" 
+                    class="rounded shadow-sm" 
+                    style="max-height: 60%; object-fit: cover; width: 100%;">
             </div>
         </div>
-        <div class="container mt-5">
+        <div class="container mt-5" 
+            style="transition: transform 0.3s ease; object-position: center;"
+            onmouseover="this.style.transform='scale(1.01)';"
+            onmouseout="this.style.transform='scale(1)';">
             <div class="p-5 mb-4 bg-light rounded-3 flex-md-row-reverse d-md-flex align-items-center gap-4">
                 <div class="container-fluid py-5">
                     <h1 class="display-5 fw-bold">Cliente</h1>
@@ -39,7 +48,10 @@ session_start();
                 <img src="https://img.freepik.com/foto-gratis/hombre-feliz-pulgares-arriba_1187-3144.jpg?semt=ais_hybrid&w=740&q=80" class="img-fluid rounded" style="max-width: 50%;" alt="Imagen de fontanería">
             </div>
         </div>
-        <div class="container mt-5">
+        <div class="container mt-5" 
+            style="transition: transform 0.3s ease; object-position: center;"
+            onmouseover="this.style.transform='scale(1.01)';"
+            onmouseout="this.style.transform='scale(1)';">
             <div class="p-5 mb-4 bg-light rounded-3 d-md-flex align-items-center justify-content-center gap-4">
                 <div class="text-end py-5"> 
                     <h1 class="display-5 fw-bold">Técnico</h1>
@@ -55,7 +67,10 @@ session_start();
                     alt="Imagen de fontanería">
             </div>
         </div>
-        <div class="container mt-5">
+        <div class="container mt-5" 
+            style="transition: transform 0.3s ease; object-position: center;"
+            onmouseover="this.style.transform='scale(1.01)';"
+            onmouseout="this.style.transform='scale(1)';">
             <div class="p-5 mb-4 bg-light rounded-3 flex-md-row-reverse d-md-flex align-items-center gap-4">
                 <div class="container-fluid py-5">
                     <h1 class="display-5 fw-bold">Administrador</h1>

@@ -2,7 +2,14 @@
 $request = $_SERVER['REQUEST_URI'];
 $path = parse_url($request, PHP_URL_PATH);
 
-switch ($path) {
+$base_path = '/~uocx8'; 
+$relative_path = str_replace([$base_path, '/index.php'], ['', ''], $path);
+
+if ($relative_path == '') {
+    $relative_path = '/';
+}
+
+switch ($relative_path) {
     case '/':
     case '/':
         require 'views/landing.php';
