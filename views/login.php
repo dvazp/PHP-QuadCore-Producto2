@@ -4,6 +4,8 @@ if (session_status() === PHP_SESSION_NONE) session_start();
 // $login_error may be set by login.php
 $login_error = $login_error ?? null;
 $old_user = $_POST['username'] ?? '';
+
+require_once __DIR__ . '/../config.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -26,7 +28,7 @@ $old_user = $_POST['username'] ?? '';
                         <div class="alert alert-danger" role="alert"><?= htmlspecialchars($login_error) ?></div>
                     <?php endif; ?>
 
-                    <form method="post" action="../controllers/auth.php">
+                    <form method="post" action="<?= BASE_URL ?>/controllers/auth.php">
                         <div class="mb-3">
                             <label for="username" class="form-label">Usuario</label>
                             <input type="text" class="form-control" id="username" name="username" required value="<?= htmlspecialchars($old_user) ?>">
@@ -37,7 +39,7 @@ $old_user = $_POST['username'] ?? '';
                         </div>
                         <div class="d-flex justify-content-between align-items-center">
                             <button class="btn btn-primary" type="submit">Entrar</button>
-                            <a href="../" class="btn btn-link">Volver</a>
+                            <a href="<?= BASE_URL ?>/" class="btn btn-link">Volver</a>
                         </div>
                     </form>
                 </div>
