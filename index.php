@@ -5,6 +5,8 @@ $path = parse_url($request, PHP_URL_PATH);
 $base_path = '/~uocx8'; 
 $relative_path = str_replace([$base_path, '/index.php'], ['', ''], $path);
 
+echo "Ruta relativa: " . $relative_path . "\n";
+
 if ($relative_path == '') {
     $relative_path = '/';
 }
