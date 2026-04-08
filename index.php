@@ -1,17 +1,29 @@
 <?php
 $request = $_SERVER['REQUEST_URI'];
+
+$full_prefix = "https://fp064.techlab.uoc.edu/~uocx8";
+$base_path = "/~uocx8";
+
+if (strpos($request, $full_prefix) === 0) {
+    $request = substr($request, strlen($full_prefix));
+}
+
 $path = parse_url($request, PHP_URL_PATH);
 
-$base_path = '/~uocx8'; 
-$relative_path = str_replace([$base_path, '/index.php'], ['', ''], $path);
+function cleanPath($path, $base, $index = '/index.php') {
+    if (strpos($path, $base) === 0) {
+        $path = substr($path, strlen($base));
+    }
+    return str_replace($index, '', $path);
+}
 
-console_log("Request URI: " . $request);
-console_log("Parsed Path: " . $path);
-console_log("Relative Path: " . $relative_path);
+$relative_path = cleanPath($path, $base_path);
 
-if ($relative_path == '') {
+if ($relative_path == '' || $relative_path == '/') {
     $relative_path = '/';
 }
+
+error_log("relative_path " . $relative_path);
 
 switch ($relative_path) {
     case '/':
