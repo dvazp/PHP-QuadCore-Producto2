@@ -27,7 +27,6 @@ error_log("relative_path " . $relative_path);
 
 switch ($relative_path) {
     case '/':
-    case '/':
         require 'views/landing.php';
         break;
     case '/home':
@@ -50,3 +49,4 @@ switch ($relative_path) {
         echo "Error 404 - Página no encontrada";
         break;
 }
+?>

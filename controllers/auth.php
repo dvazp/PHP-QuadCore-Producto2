@@ -1,8 +1,10 @@
 <?php
 session_start();
 
+require_once __DIR__ . '/../config.php';
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: /login');
+    header('Location: ' . BASE_URL . '/login');
     exit;
 }
 
@@ -13,7 +15,7 @@ $password = $_POST['password'] ?? '';
 
 if ($username === '' || $password === '') {
     $_SESSION['login_error'] = 'Ingrese usuario y contraseña.';
-    header('Location: /login');
+    header('Location: ' . BASE_URL . '/login');
     exit;
 }
 
@@ -26,11 +28,11 @@ if (isset($users[$username]) && password_verify($password, $users[$username]['pa
     ];
 
     // Redirigir según rol
-    header('Location: /home');
+    header('Location: ' . BASE_URL . '/home');
     exit;
 } else {
     $_SESSION['login_error'] = 'Credenciales incorrectas.';
-    header('Location: /login');
+    header('Location: ' . BASE_URL . '/login');
     exit;
 }
 

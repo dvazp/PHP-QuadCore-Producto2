@@ -3,7 +3,10 @@ session_start();
 $rol = $_SESSION['user']['role'] ?? null;
 if (!$rol) {
     // Redirigir a la página principal según el rol
-    header('Location: /');
+
+    require_once __DIR__ . '/../config.php';
+
+    header('Location: ' . BASE_URL . '/');
     exit;
 }
 ?>
