@@ -26,7 +26,6 @@ echo "Contenido de ese usuario en el array:\n";
 print_r($users[$username] ?? 'Nada encontrado');
 echo "\n¿La contraseña coincide?: " . (isset($users[$username]) && password_verify($password, $users[$username]['password']) ? 'SÍ' : 'NO');
 echo "</pre>";
-die(); // Paramos todo aquí para leer
 
 if (isset($users[$username]) && password_verify($password, $users[$username]['password'])) {
     // Autenticación OK
