@@ -1,4 +1,8 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 $request = $_SERVER['REQUEST_URI'];
 
 $full_prefix = "https://fp064.techlab.uoc.edu/~uocx8";
